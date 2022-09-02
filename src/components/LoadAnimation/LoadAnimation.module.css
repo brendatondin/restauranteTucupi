@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Sancreek&display=swap');
+
+body {
+  background-color: #212227;
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 6px solid #313236;
+  border-top-color: #994B22;
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  animation: is-rotating 2s linear infinite;
+}
+
+.boxMoon {
+  position: absolute;
+  animation: moon 4s ease-in-out;
+  animation-delay: 1s;
+}
+
+.boxOwl {
+  position: absolute;
+  animation: owl 4s ease-in 1s;
+}
+
+.texto {
+  font-family: 'Sancreek', cursive;
+}
+
+@keyframes moon {
+  0% {
+    scale: 0;
+  }
+
+  80% {
+    scale: 1.1;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes owl {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  /* 80%{
+        scale: 1.2;
+      } */
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes is-rotating {
+  
+  to {
+    transform: rotate(1turn);
+    
+  }
+}
