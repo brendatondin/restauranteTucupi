@@ -28,29 +28,28 @@ const Home = () => {
         <ContainerMid>
           <div className="conteudoMid">
             <SubTitle>+ brasiliedade</SubTitle>
-            <p>
+            <p className="paragraph">
               Nosso restaurante se encontra no centro da cidade, porém rodeado
               do frescor da natureza. Um refúgio brasileiro, fácil de chegar!
             </p>
             <Link to="/sobre">
               <BtnPadrao>Saiba Mais</BtnPadrao>
             </Link>
-          </div>
-          <div className="imgContainer">
-            <img src={obra} alt="obra" width={420} height={320} />
+            <div className="imgContainer">
+              <img src={obra} alt="obra" width={420} height={320} />
+            </div>
           </div>
           <div className="conteudoMid">
             <SubTitle>Ambiente</SubTitle>
-            <p>
+            <p className="paragraph">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque
               atque, id totam, officia voluptatum eos ex nam, saepe facere nisi
-              ad veritatis. Similique est voluptas iure cumque obcaecati,
-              voluptatibus consectetur?
+              ad 
             </p>
-          <BtnPadrao>Ambiente</BtnPadrao>
-          </div>
-          <div className="imgContainer">
-            <img src={espaco} alt="espaco" width={420} height={320} />
+            <BtnPadrao>Ambiente</BtnPadrao>
+            <div className="imgContainer">
+              <img src={espaco} alt="espaco" width={420} height={320} />
+            </div>
           </div>
         </ContainerMid>
       </ContainerPage>

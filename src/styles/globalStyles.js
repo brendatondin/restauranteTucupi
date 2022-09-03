@@ -108,9 +108,8 @@ export const ContainerBanner = styled.section`
 
 export const ContainerMid = styled.section`
   display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   height: 100%;
   background-position: center;
   background-color: ${azule}; 
