@@ -28,7 +28,7 @@ const Home = () => {
         <ContainerMid>
           <div className="conteudoMid">
             <SubTitle>+ brasiliedade</SubTitle>
-            <p className="paragraph">
+            <p>
               Nosso restaurante se encontra no centro da cidade, porém rodeado
               do frescor da natureza. Um refúgio brasileiro, fácil de chegar!
             </p>
@@ -41,10 +41,10 @@ const Home = () => {
           </div>
           <div className="conteudoMid">
             <SubTitle>Ambiente</SubTitle>
-            <p className="paragraph">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque
-              atque, id totam, officia voluptatum eos ex nam, saepe facere nisi
-              ad 
+            <p>
+            Cada ambiente foi pensado para que você se sinta em um 
+            lugar tão especial quanto sua própria casa. Luz, conforto e conexão 
+            com a natureza é aqui.
             </p>
             <BtnPadrao>Ambiente</BtnPadrao>
             <div className="imgContainer">
