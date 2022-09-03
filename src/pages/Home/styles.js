@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+//código morto?
 export const conteudoMid = styled`
   display: flex;
   position: relative;

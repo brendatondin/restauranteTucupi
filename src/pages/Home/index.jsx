@@ -47,8 +47,8 @@ const Home = () => {
               ad veritatis. Similique est voluptas iure cumque obcaecati,
               voluptatibus consectetur?
             </p>
-          </div>
           <BtnPadrao>Ambiente</BtnPadrao>
+          </div>
           <div className="imgContainer">
             <img src={espaco} alt="espaco" width={420} height={320} />
           </div>

@@ -111,10 +111,9 @@ export const ContainerMid = styled.section`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding: 0 150px;
   height: 100%;
   background-position: center;
-  background-color: ${azule};
+  background-color: ${azule}; 
 
   @media (max-width: 700px) {
     padding: 0 50px;

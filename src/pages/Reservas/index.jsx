@@ -14,9 +14,9 @@ const Reservas = () => {
   return (
     <ContainerPageLogin>
       <ContainerForm>
-        <Text>Faça sua Reservas</Text>
+        <Text>Faça sua reserva</Text>
         <h5>Por favor preencha os campos pra reservar</h5>
-        <p>Atenção nosso ambiente suporta até 6 lugares por mesa</p>
+        <p>Atenção nosso ambiente suporta até 6 lugares por mesa.</p>
         <ThemeProvider theme={theme}>
           <ResponsiveDatePickers />
           <BasicTimePicker />
