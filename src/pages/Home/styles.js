@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
+//código morto?
 export const conteudoMid = styled`
   display: flex;
-  position: relative;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   @media (max-width: 1000px) {
     display: ${({ none }) => (none ? "flex" : "none")};

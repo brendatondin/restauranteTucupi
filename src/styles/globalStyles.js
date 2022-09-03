@@ -14,12 +14,13 @@ export const GlobalStyle = createGlobalStyle`
 body,html{
     min-height: 100vh;
     width:100%;
+    background-color: ${azule}; 
 }
 `;
 export const BtnPadrao = styled.button`
-  position: relative;
   background-color: #4f523a;
   padding: 10px 50px;
+  margin: 10px;
   cursor: pointer;
   box-shadow: (0px 4px 4px rgba(5, 5, 5, 0.5));
   border-radius: 10px;
@@ -40,6 +41,9 @@ export const Title = styled.h1`
 
 export const SubTitle = styled.h1`
   ${Jost}
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 80px;
   font-weight: 400;
   color: ${verde};
@@ -108,13 +112,11 @@ export const ContainerBanner = styled.section`
 
 export const ContainerMid = styled.section`
   display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
-  padding: 0 150px;
+  align-items: center;
   height: 100%;
   background-position: center;
-  background-color: ${azule};
+  background-color: ${azule}; 
 
   @media (max-width: 700px) {
     padding: 0 50px;
