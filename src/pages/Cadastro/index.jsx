@@ -8,13 +8,13 @@ import {
 import InputPassword from "../../components/InputPassword";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "../../styles/variaveis";
-import { TitleOrange } from "./styles";
+import { TitleGreen } from "./styles";
 
 const Cadastro = () => {
   return (
     <ContainerPageLogin>
       <ContainerForm>
-        <TitleOrange>Cadastre-se</TitleOrange>
+        <TitleGreen>Cadastre-se</TitleGreen>
         <p>Por favor preencha o dados abaixo para cadastrar!</p>
         <ThemeProvider theme={theme}>
           <TextField
