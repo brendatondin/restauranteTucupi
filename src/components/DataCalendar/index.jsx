@@ -19,11 +19,7 @@ export default function ResponsiveDatePickers() {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Stack spacing={3}>
         <DesktopDatePicker
-<<<<<<< HEAD
           label="Data"
-=======
-          label="Date desktop"
->>>>>>> f8139b4e43d37a7ff35fe663d7e9ff269fe2fe25
           inputFormat="DD/MM/YYYY"
           value={value}
           onChange={handleChange}

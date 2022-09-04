@@ -10,13 +10,8 @@ import {
   ContainerForm,
   Text,
 } from "../../styles/globalStyles";
-<<<<<<< HEAD
 import { getReservasCliente } from "../../services/api";
 
-
-=======
-import { Link } from "react-router-dom";
->>>>>>> f8139b4e43d37a7ff35fe663d7e9ff269fe2fe25
 const Reservas = () => {
 
   const [dados, setDados]= useState([])
@@ -43,13 +38,7 @@ const Reservas = () => {
           <BasicTimePicker />
           <SelectTextFields />
         </ThemeProvider>
-<<<<<<< HEAD
         <BtnPadrao onClick={onClickButton}>Reservar</BtnPadrao>
-=======
-        <Link to="/login">
-        <BtnPadrao>Reservar</BtnPadrao>
-        </Link>
->>>>>>> f8139b4e43d37a7ff35fe663d7e9ff269fe2fe25
       </ContainerForm>
     </ContainerPageLogin>
   );
