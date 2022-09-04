@@ -9,6 +9,7 @@ import { ThemeProvider } from "@mui/material";
 import { theme } from "../../styles/variaveis";
 import { TitleOrange } from "./styles";
 import InputPassword from "../../components/InputPassword";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -26,6 +27,11 @@ const Login = () => {
           <InputPassword></InputPassword>
         </ThemeProvider>
         <BtnPadrao>ENTRAR</BtnPadrao>
+        <p>Não possue conta?
+        <Link to="/cadastro">
+          <span> Acesse</span>
+        </Link>
+        </p>
       </ContainerForm>
     </ContainerPageLogin>
   );
