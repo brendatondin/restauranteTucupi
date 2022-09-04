@@ -38,7 +38,6 @@ const Reservas = () => {
   return (
     <ContainerForm>
       <ContainerCard>
-        {/* <SubTitle>Suas Reservas</SubTitle> */}
         <CardBox>
           {reserva.length > 0 &&
             results.map((item, index) => {
