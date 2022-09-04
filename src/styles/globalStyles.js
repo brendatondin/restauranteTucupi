@@ -117,6 +117,15 @@ export const ContainerMid = styled.section`
   height: 100%;
   background-position: center;
   background-color: ${azule}; 
+  .imgContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  }
+  .btnHome{
+    display: flex;
+  justify-content: center;
+  }
 
   @media (max-width: 700px) {
     padding: 0 50px;
