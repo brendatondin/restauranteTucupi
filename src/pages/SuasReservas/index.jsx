@@ -7,23 +7,24 @@ import {
   SubTitle,
 } from "../../styles/globalStyles";
 import Card from "../../components/Card";
+import { getReservasCliente }from '../../services/api.js'
 
-const ReservasFetch = () => {
-  const [infos, setInfos] = useState([]);
+const Reservas = () => {
+  const [reserva, setReserva] = useState([]);
   const [value, setValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedProduct, setSelectedReserva] = useState("");
+  const [selectReserva, setSelectedReserva] = useState("");
 
-  const results = infos.filter((item) => {
+  const results = reserva.filter((item) => {
     if (value === "") {
       return item;
-    } else if (item.produto.toLowerCase().includes(value.toLowerCase())) {
+    } else if (item.reserva.toLowerCase().includes(value.toLowerCase())) {
       return item;
     }
   });
 
   const handleLoadReq = async () => {
-    setInfos(await getProdutos());
+    setReserva(await getReservasCliente());
   };
 
   const handleChange = (e) => {
@@ -37,32 +38,33 @@ const ReservasFetch = () => {
   return (
     <ContainerForm>
       <ContainerCard>
-        <SubTitle>Suas Reservas</SubTitle>
         <CardBox>
-          {infos.length > 0 &&
+          {reserva.length > 0 &&
             results.map((item, index) => {
               return (
                 <Card
                   key={index}
-                  img={item.img}
-                  produto={item.produto}
-                  desc={item.descricao}
-                  preco={item.valor}
+                  reserva={item.reserva}
+                  nomeCliente={item.nomeCliente}
+                  data={item.data}
+                  hora={item.hora}
+                  lugares={item.lugares}
+                  email={item.email}
                   setIsOpen={setIsOpen}
                   setSelectedReserva={setSelectedReserva}
                 />
               );
             })}
-          <ModalDelete
+          {/* <ModalDelete
             isOpen={isOpen}
-            setIsOpen={setIsOpen}
-            selectedProduct={selectedProduct}
+            setisOpen={setisOpen}
+            selectReserva={selectReserva}
             handleLoad={handleLoadReq}
-          />
+          /> */}
         </CardBox>
       </ContainerCard>
     </ContainerForm>
   );
 };
 
-export default ReservasFetch;
+export default Reservas;

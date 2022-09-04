@@ -26,7 +26,9 @@ const Home = () => {
           </Link>
         </ContainerBanner>
         <ContainerMid>
+          <SubTitle>+ brasiliedade</SubTitle>
           <div className="conteudoMid">
+<<<<<<< HEAD
             <SubTitle>+ brasiliedade</SubTitle>
             <p>
               Nosso restaurante se encontra no centro da cidade, porém rodeado
@@ -38,10 +40,25 @@ const Home = () => {
             <div className="imgContainer">
               <img src={obra} alt="obra" width={420} height={320} />
             </div>
+=======
+              <p>
+                Nosso restaurante se encontra no centro da cidade, porém rodeado
+                do frescor da natureza. Um refúgio brasileiro, fácil de chegar!
+              </p>
+            <div className="imgContainer">
+              <img src={obra} alt="obra" width={420} height={320} />
+            </div>
+            <div className="btnHome">
+              <Link to="/sobre">
+                <BtnPadrao>Saiba Mais</BtnPadrao>
+              </Link>
+            </div>
+>>>>>>> f8139b4e43d37a7ff35fe663d7e9ff269fe2fe25
           </div>
+          <SubTitle>Ambiente</SubTitle>
           <div className="conteudoMid">
-            <SubTitle>Ambiente</SubTitle>
             <p>
+<<<<<<< HEAD
             Cada ambiente foi pensado para que você se sinta em um 
             lugar tão especial quanto sua própria casa. Luz, conforto e conexão 
             com a natureza é aqui.
@@ -50,6 +67,17 @@ const Home = () => {
             <div className="imgContainer">
               <img src={espaco} alt="espaco" width={420} height={320} />
             </div>
+=======
+              Todos os ambientes foram pensado para que você se sinta em um
+              lugar tão especial quanto sua própria casa. Luz, conforto e paz.
+            </p>
+            <div className="imgContainer">
+              <img src={espaco} alt="espaco" width={420} height={320} />
+            </div>
+            <div className="btnHome">
+            <BtnPadrao>Ambiente</BtnPadrao>
+            </div>
+>>>>>>> f8139b4e43d37a7ff35fe663d7e9ff269fe2fe25
           </div>
         </ContainerMid>
       </ContainerPage>

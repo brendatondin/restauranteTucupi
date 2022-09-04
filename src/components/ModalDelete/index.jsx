@@ -4,10 +4,9 @@ import { BtnSearch } from "./styles";
 import { StyledDialog } from "./styles";
 import { deleteReservas } from "../../services/api";
 
-const ModalDelete = ({ selectedProduct, isOpen, setIsOpen, handleLoad }) => {
+const ModalDelete = ({ selectedReservas, isOpen, setIsOpen }) => {
   const handleDelete = async () => {
-    const request = await deleteReservas(selectedProduct);
-    handleLoad();
+    const request = await deleteReservas(selectedReservas);
     setIsOpen(false);
   };
 

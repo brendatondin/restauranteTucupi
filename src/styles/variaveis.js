@@ -8,7 +8,6 @@ export const theme = createTheme({
   },
 });
 
-export const marrom = "#994B22";
 export const cinza = "#212227";
 export const preto = "#1f1f1f";
 export const branco = "white";

@@ -35,7 +35,7 @@ export default function InputPassword() {
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <div>
-        <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
+        <FormControl sx={{ m: 1, width: "60ch" }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">
             Password
           </InputLabel>

@@ -7,14 +7,15 @@ import {
 } from "../../styles/globalStyles";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "../../styles/variaveis";
-import { TitleOrange } from "./styles";
+import { TitleGreen } from "./styles";
 import InputPassword from "../../components/InputPassword";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
     <ContainerPageLogin>
       <ContainerForm>
-        <TitleOrange>Login</TitleOrange>
+        <TitleGreen>Login</TitleGreen>
         <p>Por favor preencha o dados abaixo para começar!</p>
         <ThemeProvider theme={theme}>
           <TextField
@@ -26,6 +27,11 @@ const Login = () => {
           <InputPassword></InputPassword>
         </ThemeProvider>
         <BtnPadrao>ENTRAR</BtnPadrao>
+        <p>Não possue conta?
+        <Link to="/cadastro">
+          <span> Acesse</span>
+        </Link>
+        </p>
       </ContainerForm>
     </ContainerPageLogin>
   );
