@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "@mui/material";
 import SelectTextFields from "../../components/DropDown";
 import ResponsiveDatePickers from "../../components/DataCalendar";
@@ -10,7 +10,24 @@ import {
   ContainerForm,
   Text,
 } from "../../styles/globalStyles";
+import { getReservasCliente } from "../../services/api";
+
+
 const Reservas = () => {
+
+  const [dados, setDados]= useState([])
+
+    async function requisicao() {
+      const response = await getReservasCliente("primeirohenry@gmail.com")
+      setDados(response)
+    }
+    
+    function onClickButton (e) {
+      e.preventDefault();
+      requisicao(getReservasCliente)
+      console.log(dados)
+  }
+
   return (
     <ContainerPageLogin>
       <ContainerForm>
@@ -22,7 +39,7 @@ const Reservas = () => {
           <BasicTimePicker />
           <SelectTextFields />
         </ThemeProvider>
-        <BtnPadrao>Reservar</BtnPadrao>
+        <BtnPadrao onClick={onClickButton}>Reservar</BtnPadrao>
       </ContainerForm>
     </ContainerPageLogin>
   );

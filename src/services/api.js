@@ -6,7 +6,7 @@ export const api = axios.create({
 
 export const getReservasCliente = async (email) => {
   const response = await api.get(`/reservas/email/${email}`);
-  return await response.data.dados;
+  return await response.data;
 };
 
 export const deleteReservas = async (id) => {
@@ -15,8 +15,11 @@ export const deleteReservas = async (id) => {
 
 export const postReservas = async (body) => {
   const response = await api.post("/reservas", body);
-  const json = await response.data.dados;
-  console.log(json);
-  return json;
+  return response;
 };
+
+export const putReservas = async(email, body) => {
+  const response = await api.put (`/reservas/email/${email}`, body);
+  return response
+}
 
