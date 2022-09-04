@@ -1,21 +1,20 @@
 import styled from "styled-components";
 
-//código morto?
-export const conteudoMid = styled`
+export const ConteudoMid = styled `
   display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   flex-direction: column;
   @media (max-width: 1000px) {
     display: ${({ none }) => (none ? "flex" : "none")};
   }
 `;
 
-export const imgContainer = styled`
+export const ImgContainer = styled `
   display: flex;
-   position: relative;
+  position: relative;
   margin-left: 40px;
   @media (max-width: 1000px) {
     display: ${({ none }) => (none ? "flex" : "none")};
   }
 `;
+

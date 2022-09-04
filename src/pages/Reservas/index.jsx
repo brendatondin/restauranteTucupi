@@ -10,6 +10,7 @@ import {
   ContainerForm,
   Text,
 } from "../../styles/globalStyles";
+import { Link } from "react-router-dom";
 const Reservas = () => {
   return (
     <ContainerPageLogin>
@@ -22,7 +23,9 @@ const Reservas = () => {
           <BasicTimePicker />
           <SelectTextFields />
         </ThemeProvider>
+        <Link to="/login">
         <BtnPadrao>Reservar</BtnPadrao>
+        </Link>
       </ContainerForm>
     </ContainerPageLogin>
   );

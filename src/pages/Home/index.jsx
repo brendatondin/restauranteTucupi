@@ -26,29 +26,32 @@ const Home = () => {
           </Link>
         </ContainerBanner>
         <ContainerMid>
+          <SubTitle>+ brasiliedade</SubTitle>
           <div className="conteudoMid">
-            <SubTitle>+ brasiliedade</SubTitle>
-            <p>
-              Nosso restaurante se encontra no centro da cidade, porém rodeado
-              do frescor da natureza. Um refúgio brasileiro, fácil de chegar!
-            </p>
-            <Link to="/sobre">
-              <BtnPadrao>Saiba Mais</BtnPadrao>
-            </Link>
+              <p>
+                Nosso restaurante se encontra no centro da cidade, porém rodeado
+                do frescor da natureza. Um refúgio brasileiro, fácil de chegar!
+              </p>
             <div className="imgContainer">
               <img src={obra} alt="obra" width={420} height={320} />
             </div>
+            <div className="btnHome">
+              <Link to="/sobre">
+                <BtnPadrao>Saiba Mais</BtnPadrao>
+              </Link>
+            </div>
           </div>
+          <SubTitle>Ambiente</SubTitle>
           <div className="conteudoMid">
-            <SubTitle>Ambiente</SubTitle>
             <p>
-            Cada ambiente foi pensado para que você se sinta em um 
-            lugar tão especial quanto sua própria casa. Luz, conforto e conexão 
-            com a natureza é aqui.
+              Todos os ambientes foram pensado para que você se sinta em um
+              lugar tão especial quanto sua própria casa. Luz, conforto e paz.
             </p>
-            <BtnPadrao>Ambiente</BtnPadrao>
             <div className="imgContainer">
               <img src={espaco} alt="espaco" width={420} height={320} />
+            </div>
+            <div className="btnHome">
+            <BtnPadrao>Ambiente</BtnPadrao>
             </div>
           </div>
         </ContainerMid>
