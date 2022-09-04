@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { marrom, branco } from "../../styles/variaveis";
+import { verde, branco } from "../../styles/variaveis";
 
 export const Container = styled.div`
   position: absolute;
@@ -14,7 +14,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${marrom};
+  background-color: ${verde};
   opacity: 0;
   pointer-events: none;
   transition: 0.5s;
