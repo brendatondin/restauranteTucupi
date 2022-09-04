@@ -37,14 +37,14 @@ const ReservasFetch = () => {
   return (
     <ContainerForm>
       <ContainerCard>
-        <SubTitle>Suas Reservas</SubTitle>
+        {/* <SubTitle>Suas Reservas</SubTitle> */}
         <CardBox>
           {infos.length > 0 &&
             results.map((item, index) => {
               return (
                 <Card
                   key={index}
-                  img={item.img}
+                  // img={item.img}
                   produto={item.produto}
                   desc={item.descricao}
                   preco={item.valor}

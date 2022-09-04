@@ -21,9 +21,9 @@ const NavBar = ({ column, gap, none }) => {
         <li>
           <Link to="/login">Login</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/cadastro">Sing Up</Link>
-        </li>
+        </li> */}
       </div>
     </NavBarStyled>
   );
