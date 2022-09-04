@@ -4,30 +4,28 @@ import { BsPencilSquare } from "react-icons/bs";
 import { CardStyle } from "./styles";
 import { Link } from "react-router-dom";
 
-const Card = ({ img, produto, desc, preco, setIsOpen, setSelectedProduct }) => {
-  const handleProduct = () => {
+const Card = ({ reserva, nomeCliente, data, hora, lugares, email, setIsOpen, setSelectedReserva }) => {
+  const handleReserva = () => {
     setIsOpen(true);
-    setSelectedProduct(produto);
+    setSelectedReserva(reserva);
   };
 
   return (
     <CardStyle>
-      <figure>
-        <img src={img} alt="produto" />
-      </figure>
       <div className="infos">
-        <h3>{produto.toUpperCase()}</h3>
-        <p>{desc}</p>
-        <div className="editPrice">
+        <h3>{reserva.toUpperCase()}</h3>
+        <p>{nomeCliente}</p>
+        <p>{data}</p>
+        <p>{hora}</p>
+        <p>{lugares}</p>
+        <p>{email}</p>
+        <div className="editReserva">
           <div className="icons">
             <Link to="">
               <BsPencilSquare color={"#000"} size={25} />
             </Link>
-            <GoTrashcan color={"#000"} size={25} onClick={handleProduct} />
+            <GoTrashcan color={"#000"} size={25} onClick={handleReserva} />
           </div>
-          <h4>
-            a partir de:<span>R${preco}</span>
-          </h4>
         </div>
       </div>
     </CardStyle>
