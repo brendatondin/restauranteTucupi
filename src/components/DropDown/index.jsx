@@ -50,10 +50,10 @@ export default function SelectTextFields() {
         <TextField
           id="standard-select-currency"
           select
-          label="Select"
+          label="Lugares"
           value={currency}
           onChange={handleChange}
-          helperText="Please select your currency"
+          helperText="Selecione a quantidade de lugares"
           variant="standard"
         >
           {Quantidade.map((option) => (

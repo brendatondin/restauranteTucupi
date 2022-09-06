@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import ModalDelete from "../../components/ModalDelete";
-import ModalEditar from "../../components/ModalEditar";
-import {
+/* import ModalEditar from "../../components/ModalEditar";
+ */import {
   ContainerForm,
   ContainerCard,
   CardBox,
   SubTitle,
 } from "../../styles/globalStyles";
 import Card from "../../components/Card";
-import { getReservasCliente, deleteReservas } from '../../services/api.js'
+import { getTodasAsReservas, deleteReservas } from '../../services/api.js'
 
 
 const Reservas = () => {
@@ -19,7 +19,7 @@ const Reservas = () => {
   const [selectReserva, setSelectedReserva] = useState("");
 
   const handleLoadReq = async () => {
-    const req = await getReservasCliente()
+    const req = await getTodasAsReservas()
     setReserva(await req.data.reservas)
   };
 
@@ -76,13 +76,13 @@ const Reservas = () => {
             handleDelete={handleDelete}
             handleReload={handleReload}
           />
-          <ModalEditar
+          {/* <ModalEditar
           isOpen={isOpen}
           setIsOpen={setIsOpen}
           selectReserva={selectReserva}
           handleEditar={handleEditar}
           handleReload={handleReload}
-          />
+          /> */}
         </CardBox>
       </ContainerCard>
     </ContainerForm>
