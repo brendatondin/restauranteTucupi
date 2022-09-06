@@ -117,6 +117,8 @@ export const ContainerMid = styled.section`
   height: 100%;
   background-position: center;
   background-color: ${azule}; 
+<<<<<<< HEAD
+=======
   .imgContainer{
   display: flex;
   justify-content: center;
@@ -126,6 +128,7 @@ export const ContainerMid = styled.section`
     display: flex;
   justify-content: center;
   }
+>>>>>>> f8139b4e43d37a7ff35fe663d7e9ff269fe2fe25
 
   @media (max-width: 700px) {
     padding: 0 50px;

@@ -4,6 +4,7 @@ export const api = axios.create({
   baseURL: "https://api-tucupi.herokuapp.com",
 });
 
+
 export const getReservasCliente = async () => {
   const response = await api.get("/reservas");
   return response;
@@ -23,5 +24,11 @@ export const postReservas = async (body) => {
 
 export const putReservas = async (id, body) => {
   const response = await api.put("/reservas/")
+  return response;
+};
+
+export const putReservas = async(email, body) => {
+  const response = await api.put (`/reservas/email/${email}`, body);
+  return response
 }
 
