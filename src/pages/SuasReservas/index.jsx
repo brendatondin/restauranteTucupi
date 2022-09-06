@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ModalDelete from "../../components/ModalDelete";
-import ModalEditar from "../../components/ModalEditar";
 import {
   ContainerForm,
   ContainerCard,
@@ -9,6 +8,7 @@ import {
 } from "../../styles/globalStyles";
 import Card from "../../components/Card";
 import { getReservasCliente, deleteReservas } from '../../services/api.js'
+import ModalEditar from "../../components/ModalEditar";
 
 
 const Reservas = () => {
@@ -16,15 +16,12 @@ const Reservas = () => {
   const [reload, setReload] = useState(false)
   const [value, setValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenEdit, setIsOpenEdit] = useState(false);
   const [selectReserva, setSelectedReserva] = useState("");
 
   const handleLoadReq = async () => {
     const req = await getReservasCliente()
     setReserva(await req.data.reservas)
-  };
-
-  const handleEditar = (e) => {
-    setValue(e.target.value);
   };
 
   const handleReload = () => {
@@ -36,6 +33,12 @@ const Reservas = () => {
     setIsOpen(false)
     handleReload()
   }
+
+  const handleChange = (key, target) => {
+    setSelectedReserva({ ...selectReserva, [key]: target.value })
+    console.log(selectReserva);
+  }
+
 
   useEffect(() => {
     handleLoadReq()
@@ -58,7 +61,7 @@ const Reservas = () => {
               return (
                 <Card
                   key={index}
-                  reserva={item.idReserva}
+                  reserva={item}
                   nomeCliente={item.nomeCliente}
                   data={item.data}
                   hora={item.hora}
@@ -66,6 +69,7 @@ const Reservas = () => {
                   email={item.email}
                   setIsOpen={setIsOpen}
                   setSelectedReserva={setSelectedReserva}
+                  setIsOpenEdit={setIsOpenEdit}
                 />
               );
             })}
@@ -77,11 +81,10 @@ const Reservas = () => {
             handleReload={handleReload}
           />
           <ModalEditar
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-          selectReserva={selectReserva}
-          handleEditar={handleEditar}
-          handleReload={handleReload}
+            isOpenEdit={isOpenEdit}
+            setIsOpenEdit={setIsOpenEdit}
+            selectReserva={selectReserva}
+            handleChange={handleChange}
           />
         </CardBox>
       </ContainerCard>
