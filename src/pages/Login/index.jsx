@@ -15,6 +15,9 @@ const Login = () => {
   return (
     <ContainerPageLogin>
       <ContainerForm>
+      <BtnPadrao>Cliente</BtnPadrao>
+      <BtnPadrao>Funcionário</BtnPadrao>
+
         <TitleGreen>Login</TitleGreen>
         <p>Por favor preencha o dados abaixo para começar!</p>
         <ThemeProvider theme={theme}>

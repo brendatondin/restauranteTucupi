@@ -13,7 +13,7 @@ const Card = ({ reserva, nomeCliente, data, hora, lugares, email, setIsOpen, set
   return (
     <CardStyle>
       <div className="infos">
-        <h3>{reserva.toUpperCase()}</h3>
+        <h3>{reserva}</h3>
         <p>{nomeCliente}</p>
         <p>{data}</p>
         <p>{hora}</p>
