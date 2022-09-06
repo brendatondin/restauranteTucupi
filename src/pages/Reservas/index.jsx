@@ -86,12 +86,12 @@ const Reservas = () => {
             </Stack>
           </LocalizationProvider>
 
-          {/* <BasicTimePicker
+         <BasicTimePicker
             onChange={({ target }) => handleChange(target, "hora")}
-          /> */}
-          {/* <SelectTextFields
+          />
+          <SelectTextFields
             onChange={({ target }) => handleChange(target, "lugares")}
-          /> */}
+          />
           <TextField
             required
             id="outlined-required"
