@@ -20,7 +20,7 @@ body,html{
 export const BtnPadrao = styled.button`
   background-color: #4f523a;
   padding: 10px 50px;
-  margin: 10px;
+  margin: 20px;
   cursor: pointer;
   box-shadow: (0px 4px 4px rgba(5, 5, 5, 0.5));
   border-radius: 10px;
