@@ -26,7 +26,6 @@ const Reservas = () => {
     data: `${valueData.$D}`,
     hora: "",
     lugares: "",
-    mesa: "",
     email: "",
   });
 
@@ -35,16 +34,15 @@ const Reservas = () => {
     setDados(response);
   }
 
-  function onClickButton(e) {
+  async function onClickButton(e) {
     e.preventDefault();
-    requisicao(postReservas);
-    console.log(dados);
+    console.log(valores);
+    await requisicao(postReservas);
   }
 
   function handleChange(target, key) {
     const value = target.value;
     setValores({ ...valores, [key]: value });
-    console.log(valores);
   }
 
   const handleChangeData = (newValue) => {
@@ -87,8 +85,13 @@ const Reservas = () => {
           </LocalizationProvider>
 
          <BasicTimePicker
-            onChange={({ target }) => handleChange(target, "hora")}
+            onChange={(target) => {handleChange(target, "hora")}}
           />
+
+
+
+
+
           <SelectTextFields
             onChange={({ target }) => handleChange(target, "lugares")}
           />
@@ -96,7 +99,6 @@ const Reservas = () => {
             required
             id="outlined-required"
             label="Seu e-mail"
-            defaultValue=""
             onChange={({ target }) => handleChange(target, "email")}
           />
         </ThemeProvider>
