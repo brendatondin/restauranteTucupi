@@ -2,14 +2,9 @@ import { Dialog } from "@headlessui/react";
 import React from "react";
 import { BtnSearch } from "./styles";
 import { StyledDialog } from "./styles";
-import { deleteReservas } from "../../services/api";
 
-const ModalDelete = ({ selectedReservas, isOpen, setIsOpen }) => {
-  const handleDelete = async () => {
-    const request = await deleteReservas(selectedReservas);
-    setIsOpen(false);
-  };
-
+const ModalDelete = ({ isOpen, setIsOpen, handleDelete}) => {
+  
   return (
     <StyledDialog open={isOpen} onClose={() => setIsOpen(false)}>
       <div className="divModal">

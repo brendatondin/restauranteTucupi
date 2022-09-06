@@ -11,6 +11,7 @@ export const getReservasCliente = async (email) => {
 
 export const deleteReservas = async (id) => {
   await api.delete(`/reservas/idReserva/${id}`);
+  return 'reserva deletada com sucesso'
 };
 
 export const postReservas = async (body) => {
