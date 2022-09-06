@@ -1,23 +1,14 @@
 import React, { useState, useEffect } from "react";
 import ModalDelete from "../../components/ModalDelete";
-<<<<<<< HEAD
-import {
-=======
 /* import ModalEditar from "../../components/ModalEditar";
  */import {
->>>>>>> 25247de692ce3501b174b03dae360e6f096b89ee
   ContainerForm,
   ContainerCard,
   CardBox,
   SubTitle,
 } from "../../styles/globalStyles";
 import Card from "../../components/Card";
-<<<<<<< HEAD
-import { getReservasCliente, deleteReservas } from '../../services/api.js'
-import ModalEditar from "../../components/ModalEditar";
-=======
 import { getTodasAsReservas, deleteReservas } from '../../services/api.js'
->>>>>>> 25247de692ce3501b174b03dae360e6f096b89ee
 
 
 const Reservas = () => {
@@ -89,14 +80,6 @@ const Reservas = () => {
             handleDelete={handleDelete}
             handleReload={handleReload}
           />
-<<<<<<< HEAD
-          <ModalEditar
-            isOpenEdit={isOpenEdit}
-            setIsOpenEdit={setIsOpenEdit}
-            selectReserva={selectReserva}
-            handleChange={handleChange}
-          />
-=======
           {/* <ModalEditar
           isOpen={isOpen}
           setIsOpen={setIsOpen}
@@ -104,7 +87,6 @@ const Reservas = () => {
           handleEditar={handleEditar}
           handleReload={handleReload}
           /> */}
->>>>>>> 25247de692ce3501b174b03dae360e6f096b89ee
         </CardBox>
       </ContainerCard>
     </ContainerForm>
