@@ -4,9 +4,9 @@ export const api = axios.create({
   baseURL: "https://api-tucupi.herokuapp.com",
 });
 
-export const getReservasCliente = async (email) => {
-  const response = await api.get(`/reservas/email/${email}`);
-  return await response.data;
+export const getReservasCliente = async () => {
+  const response = await api.get("/reservas");
+  return response;
 };
 
 export const deleteReservas = async (id) => {
@@ -16,8 +16,11 @@ export const deleteReservas = async (id) => {
 
 export const postReservas = async (body) => {
   const response = await api.post("/reservas", body);
-  return response;
+  const json = await response.data;
+  console.log(json);
+  return json;
 };
+
 
 export const putReservas = async(email, body) => {
   const response = await api.put (`/reservas/email/${email}`, body);
