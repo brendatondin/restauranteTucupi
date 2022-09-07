@@ -64,7 +64,7 @@ const Reservas = () => {
 
 
   return (
-    <ContainerForm>
+    
       <ContainerCard>
         <CardBox>
           {reserva &&
@@ -101,7 +101,6 @@ const Reservas = () => {
           />
         </CardBox>
       </ContainerCard>
-    </ContainerForm>
   );
 };
 
