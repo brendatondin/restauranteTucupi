@@ -43,6 +43,7 @@ const Reservas = () => {
   function handleChange(target, key) {
     const value = target.value;
     setValores({ ...valores, [key]: value });
+    console.log(valores);
   }
 
   const handleChangeData = (newValue) => {

@@ -8,7 +8,7 @@ import ModalDelete from "../../components/ModalDelete";
   SubTitle,
 } from "../../styles/globalStyles";
 import Card from "../../components/Card";
-import { getTodasAsReservas, deleteReservas } from '../../services/api.js'
+import { getTodasAsReservas, deleteReservas, putReservas } from '../../services/api.js'
 
 
 const Reservas = () => {
@@ -16,26 +16,40 @@ const Reservas = () => {
   const [reload, setReload] = useState(false)
   const [value, setValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenEdit, setIsOpenEdit] = useState(false);
   const [selectReserva, setSelectedReserva] = useState("");
 
   const handleLoadReq = async () => {
     const req = await getTodasAsReservas()
     setReserva(await req.data.reservas)
   };
-
   const handleEditar = (e) => {
     setValue(e.target.value);
-  };
+  }
 
   const handleReload = () => {
     setReload(true)
   }
 
-  const handleDelete = async () => {
+  const deletar = async () => {
     await deleteReservas(selectReserva)
     setIsOpen(false)
     handleReload()
+    console.log(selectReserva)
   }
+
+  const handleChange = (key, target) => {
+    setSelectedReserva({ ...selectReserva, [key]: target.value })
+    console.log(selectReserva);
+
+  }
+
+  const atualiza = async () => {
+    await putReservas(selectReserva.idReserva, selectReserva)
+    setIsOpenEdit(false)
+    handleReload()
+  }
+
 
   useEffect(() => {
     handleLoadReq()
@@ -58,7 +72,7 @@ const Reservas = () => {
               return (
                 <Card
                   key={index}
-                  reserva={item.idReserva}
+                  reserva={item}
                   nomeCliente={item.nomeCliente}
                   data={item.data}
                   hora={item.hora}
@@ -66,6 +80,7 @@ const Reservas = () => {
                   email={item.email}
                   setIsOpen={setIsOpen}
                   setSelectedReserva={setSelectedReserva}
+                  setIsOpenEdit={setIsOpenEdit}
                 />
               );
             })}
@@ -73,16 +88,17 @@ const Reservas = () => {
             isOpen={isOpen}
             setIsOpen={setIsOpen}
             selectReserva={selectReserva}
-            handleDelete={handleDelete}
+            handleDelete={deletar}
             handleReload={handleReload}
           />
-          {/* <ModalEditar
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-          selectReserva={selectReserva}
-          handleEditar={handleEditar}
-          handleReload={handleReload}
-          /> */}
+          <ModalEditar
+            isOpenEdit={isOpenEdit}
+            setIsOpenEdit={setIsOpenEdit}
+            selectReserva={selectReserva}
+            handleChange={handleChange}
+            atualiza={atualiza}
+
+          />
         </CardBox>
       </ContainerCard>
     </ContainerForm>
