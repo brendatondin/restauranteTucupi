@@ -9,11 +9,11 @@ import {
   ContainerForm,
   Text,
 } from "../../styles/globalStyles";
-import {  postReservas } from "../../services/api";
+import { postReservas } from "../../services/api";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 
@@ -24,9 +24,8 @@ const Reservas = () => {
   const [valores, setValores] = useState({
     nomeCliente: "",
     data: `${valueData.$D}`,
-    hora: "",
-    lugares: "",
-    mesa: "",
+    hora: [],
+    lugares: [],
     email: "",
   });
 
@@ -35,23 +34,25 @@ const Reservas = () => {
     setDados(response);
   }
 
-  function onClickButton(e) {
+  async function onClickButton(e) {
     e.preventDefault();
-    requisicao(postReservas);
-    console.log(dados);
+    console.log(valores);
+    await requisicao(postReservas);
   }
 
   function handleChange(target, key) {
     const value = target.value;
     setValores({ ...valores, [key]: value });
     console.log(valores);
+
   }
 
   const handleChangeData = (newValue) => {
     setValueData(newValue);
     setValores({
-      ...valores, data: `${valueData.$D}/${valueData.$M}/${valueData.$y}`
-    })
+      ...valores,
+      data: `${valueData.$D}/${valueData.$M}/${valueData.$y}`,
+    });
     console.log(valueData);
   };
 
@@ -77,26 +78,26 @@ const Reservas = () => {
                 defaultValue=""
                 inputFormat="DD-MM-YYYY"
                 value={valueData}
-                onChange={
-                  handleChangeData
-                }
-
+                onChange={handleChangeData}
                 renderInput={(params) => <TextField {...params} />}
               />
             </Stack>
           </LocalizationProvider>
 
-         <BasicTimePicker
-            onChange={({ target }) => handleChange(target, "hora")}
+          <BasicTimePicker
+          
+            value={valores.hora}
+            onChange={({ target }) => handleChange(target.value, "hora")}
           />
+
           <SelectTextFields
-            onChange={({ target }) => handleChange(target, "lugares")}
+          value={valores.lugares}
+          onChange={({ target }) => handleChange(target.value, "lugares")}
           />
           <TextField
             required
             id="outlined-required"
             label="Seu e-mail"
-            defaultValue=""
             onChange={({ target }) => handleChange(target, "email")}
           />
         </ThemeProvider>
