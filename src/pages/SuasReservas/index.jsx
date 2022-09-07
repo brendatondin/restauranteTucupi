@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ModalDelete from "../../components/ModalDelete";
-/* import ModalEditar from "../../components/ModalEditar";
- */import {
+import ModalEditar from "../../components/ModalEditar";
+import {
   ContainerForm,
   ContainerCard,
   CardBox,
@@ -97,7 +97,6 @@ const Reservas = () => {
             selectReserva={selectReserva}
             handleChange={handleChange}
             atualiza={atualiza}
-
           />
         </CardBox>
       </ContainerCard>
