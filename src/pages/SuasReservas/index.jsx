@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ModalDelete from "../../components/ModalDelete";
-/* import ModalEditar from "../../components/ModalEditar";
- */import {
+import ModalEditar from "../../components/ModalEditar";
+import {
   ContainerForm,
   ContainerCard,
   CardBox,
@@ -23,6 +23,9 @@ const Reservas = () => {
     const req = await getTodasAsReservas()
     setReserva(await req.data.reservas)
   };
+const handleEditar = (e) => {
+  setValue(e.target.value);
+}
 
   const handleReload = () => {
     setReload(true)
@@ -32,6 +35,7 @@ const Reservas = () => {
     await deleteReservas(selectReserva)
     setIsOpen(false)
     handleReload()
+    console.log(selectReserva)
   }
 
   const handleChange = (key, target) => {
@@ -80,13 +84,13 @@ const Reservas = () => {
             handleDelete={handleDelete}
             handleReload={handleReload}
           />
-          {/* <ModalEditar
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
+          <ModalEditar
+          isOpenEdit={isOpenEdit}
+          setIsOpenEdit={setIsOpenEdit}
           selectReserva={selectReserva}
-          handleEditar={handleEditar}
-          handleReload={handleReload}
-          /> */}
+          handleChange={handleChange}
+
+          />
         </CardBox>
       </ContainerCard>
     </ContainerForm>
