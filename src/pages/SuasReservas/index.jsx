@@ -97,7 +97,6 @@ const Reservas = () => {
             selectReserva={selectReserva}
             handleChange={handleChange}
             atualiza={atualiza}
-
           />
         </CardBox>
       </ContainerCard>
