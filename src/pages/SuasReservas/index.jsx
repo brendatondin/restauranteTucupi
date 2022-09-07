@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ModalDelete from "../../components/ModalDelete";
-/* import ModalEditar from "../../components/ModalEditar";
- */import {
+import ModalEditar from "../../components/ModalEditar";
+import {
   ContainerForm,
   ContainerCard,
   CardBox,
@@ -16,16 +16,16 @@ const Reservas = () => {
   const [reload, setReload] = useState(false)
   const [value, setValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenEdit, setIsOpenEdit] = useState(false);
   const [selectReserva, setSelectedReserva] = useState("");
 
   const handleLoadReq = async () => {
     const req = await getTodasAsReservas()
     setReserva(await req.data.reservas)
   };
-
-  const handleEditar = (e) => {
-    setValue(e.target.value);
-  };
+const handleEditar = (e) => {
+  setValue(e.target.value);
+}
 
   const handleReload = () => {
     setReload(true)
@@ -35,7 +35,14 @@ const Reservas = () => {
     await deleteReservas(selectReserva)
     setIsOpen(false)
     handleReload()
+    console.log(selectReserva)
   }
+
+  const handleChange = (key, target) => {
+    setSelectedReserva({ ...selectReserva, [key]: target.value })
+    console.log(selectReserva);
+  }
+
 
   useEffect(() => {
     handleLoadReq()
@@ -58,7 +65,7 @@ const Reservas = () => {
               return (
                 <Card
                   key={index}
-                  reserva={item.idReserva}
+                  reserva={item}
                   nomeCliente={item.nomeCliente}
                   data={item.data}
                   hora={item.hora}
@@ -66,6 +73,7 @@ const Reservas = () => {
                   email={item.email}
                   setIsOpen={setIsOpen}
                   setSelectedReserva={setSelectedReserva}
+                  setIsOpenEdit={setIsOpenEdit}
                 />
               );
             })}
@@ -76,13 +84,13 @@ const Reservas = () => {
             handleDelete={handleDelete}
             handleReload={handleReload}
           />
-          {/* <ModalEditar
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
+          <ModalEditar
+          isOpenEdit={isOpenEdit}
+          setIsOpenEdit={setIsOpenEdit}
           selectReserva={selectReserva}
-          handleEditar={handleEditar}
-          handleReload={handleReload}
-          /> */}
+          handleChange={handleChange}
+
+          />
         </CardBox>
       </ContainerCard>
     </ContainerForm>
