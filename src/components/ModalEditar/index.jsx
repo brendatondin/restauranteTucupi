@@ -4,7 +4,9 @@ import FormEdit from "../FormEdit";
 import { BtnSearch } from "./styles";
 import { StyledDialog } from "./styles";
 
-const ModalEditar = ({ isOpenEdit, setIsOpenEdit, handleEditar, handleChange, selectReserva}) => {
+
+const ModalEditar = ({ isOpenEdit, setIsOpenEdit, handleEditar, handleChange, selectReserva, atualiza}) => {
+
 
     return (
         <StyledDialog open={isOpenEdit} onClose={() => setIsOpenEdit(false)}>
@@ -13,7 +15,7 @@ const ModalEditar = ({ isOpenEdit, setIsOpenEdit, handleEditar, handleChange, se
                     <Dialog.Title>Edita?</Dialog.Title>
                     <FormEdit value={selectReserva} handleChange={handleChange}/>
                     <div className="buttons">
-                        <BtnSearch onClick={handleEditar}>Ok</BtnSearch>
+                        <BtnSearch onClick={atualiza}>Ok</BtnSearch>
                         <BtnSearch onClick={() => setIsOpenEdit(false)}>Cancel</BtnSearch>
                     </div>
                 </Dialog.Panel>

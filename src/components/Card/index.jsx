@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 const Card = ({ reserva, nomeCliente, data, hora, lugares, email, setIsOpen, setSelectedReserva, setIsOpenEdit }) => {
   const handleReserva = () => {
     setIsOpen(true);
-    setSelectedReserva(reserva.id);
+    setSelectedReserva(reserva.idReserva);
+    console.log(reserva.idReserva);
   };
 
   const handleReservaEdit = () => {
@@ -19,7 +20,7 @@ const Card = ({ reserva, nomeCliente, data, hora, lugares, email, setIsOpen, set
   return (
     <CardStyle>
       <div className="infos">
-        <h3>{reserva.id}</h3>
+        <h3>{reserva.idReserva}</h3>
         <p>{nomeCliente}</p>
         <p>{data}</p>
         <p>{hora}</p>

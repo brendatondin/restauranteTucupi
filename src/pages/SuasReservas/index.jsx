@@ -8,7 +8,7 @@ import {
   SubTitle,
 } from "../../styles/globalStyles";
 import Card from "../../components/Card";
-import { getTodasAsReservas, deleteReservas } from '../../services/api.js'
+import { getTodasAsReservas, deleteReservas, putReservas } from '../../services/api.js'
 
 
 const Reservas = () => {
@@ -23,15 +23,15 @@ const Reservas = () => {
     const req = await getTodasAsReservas()
     setReserva(await req.data.reservas)
   };
-const handleEditar = (e) => {
-  setValue(e.target.value);
-}
+  const handleEditar = (e) => {
+    setValue(e.target.value);
+  }
 
   const handleReload = () => {
     setReload(true)
   }
 
-  const handleDelete = async () => {
+  const deletar = async () => {
     await deleteReservas(selectReserva)
     setIsOpen(false)
     handleReload()
@@ -41,6 +41,13 @@ const handleEditar = (e) => {
   const handleChange = (key, target) => {
     setSelectedReserva({ ...selectReserva, [key]: target.value })
     console.log(selectReserva);
+
+  }
+
+  const atualiza = async () => {
+    await putReservas(selectReserva.idReserva, selectReserva)
+    setIsOpenEdit(false)
+    handleReload()
   }
 
 
@@ -81,14 +88,17 @@ const handleEditar = (e) => {
             isOpen={isOpen}
             setIsOpen={setIsOpen}
             selectReserva={selectReserva}
-            handleDelete={handleDelete}
+            handleDelete={deletar}
             handleReload={handleReload}
           />
           <ModalEditar
-          isOpenEdit={isOpenEdit}
-          setIsOpenEdit={setIsOpenEdit}
-          selectReserva={selectReserva}
-          handleChange={handleChange}
+
+            isOpenEdit={isOpenEdit}
+            setIsOpenEdit={setIsOpenEdit}
+            selectReserva={selectReserva}
+            handleChange={handleChange}
+            atualiza={atualiza}
+
 
           />
         </CardBox>
