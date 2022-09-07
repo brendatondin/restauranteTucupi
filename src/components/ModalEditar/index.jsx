@@ -4,7 +4,9 @@ import FormEdit from "../FormEdit";
 import { BtnSearch } from "./styles";
 import { StyledDialog } from "./styles";
 
+
 const ModalEditar = ({ isOpenEdit, setIsOpenEdit, handleEditar, handleChange, selectReserva, atualiza}) => {
+
 
     return (
         <StyledDialog open={isOpenEdit} onClose={() => setIsOpenEdit(false)}>
