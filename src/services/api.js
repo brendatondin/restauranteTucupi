@@ -27,7 +27,6 @@ export const postReservas = async (body) => {
 };
 
 
-
 export const putReservas = async(idReserva, body) => {
   const response = await api.put(`/reservas/idReserva/${idReserva}`, body);
   return response
