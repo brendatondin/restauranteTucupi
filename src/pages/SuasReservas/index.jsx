@@ -41,6 +41,7 @@ const Reservas = () => {
   const handleChange = (key, target) => {
     setSelectedReserva({ ...selectReserva, [key]: target.value })
     console.log(selectReserva);
+
   }
 
   const atualiza = async () => {
