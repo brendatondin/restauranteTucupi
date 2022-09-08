@@ -39,6 +39,8 @@ O Restaurante Tucupi possui cardápio nortista e celebra o "sabor de Brasil" atr
 ## Rotas de aplicação
 
 - `/Home:` A página **"Home"** do Restaurante Tucupi traz informações sobre localização, fotos ilustrativas, logotipo, e botão de transição para a página de reservas de mesas. A página é composta das cores padrões criados para o projeto. Verde, Amarelo e Cinza claro. 
+-  `/Cadastro:` Para adicionar o cliente em nosso banco de dados, o cliente pode inserir suas informações e eventuais dados por meio da página "cadastro".
+-  `/SuasReserva:` Para acesso e revisão dos agendamentos feitos pelo usuário, o cliente pode consultar através da página "Suas Reservas" as informações enviadas para a Api com seus dados de reserva.
 
 - `/Reserva:` A página **"Reserva"** é interativa com o usuário e há possibilidade de de realizar marcações de horário e mesa a qual o cliente deseja realizar sua refeição. A página se conecta a API do Restaurante onde registra o horário e contato dos clientes em um banco de dados.
 
