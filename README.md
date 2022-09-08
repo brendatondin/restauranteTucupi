@@ -73,4 +73,10 @@ Instalandos os pacotes:
 npm install ou npm i
 
 ```
+Utilize da aplicação rodando o projeto no terminal com:
+
+```
+npm run dev
+
+```
 
