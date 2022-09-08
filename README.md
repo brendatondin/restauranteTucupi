@@ -8,6 +8,8 @@
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![MaterialUI](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![MaterialUI](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white)
 
 ## O projeto:
 
@@ -20,12 +22,15 @@ O **Restaurante Tucupi** é um projeto estudantil em React com finalidade de con
 O Restaurante Tucupi possui cardápio nortista e celebra o "sabor de Brasil" através da iguaria culinária nortista. Com influência do Tucupi, líquido extraído da mandioca, o produto é usado na gastronomia em diversas comidas. A indentidade visual carrega a influência das cor predominante da naturena, o verde, enquanto resgata a cor amarelada da extração do Tucupi, composta pela cor amarela. Para acrescentar formidade visual ao projeto, a cor cinza claro faz contraposição na paleta de cores visível em toda a aplicação do projeto.
 
 
-## Páginas da aplicação
+## Rotas de aplicação
 
-- Home: A página **"Home"** do Restaurante Tucupi traz informações sobre localização, fotos ilustrativas, logotipo, e botão de transição para a página de reservas de mesas. A página é composta das cores padrões criados para o projeto. Verde, Amarelo e Cinza claro. 
+- `/Home:` A página **"Home"** do Restaurante Tucupi traz informações sobre localização, fotos ilustrativas, logotipo, e botão de transição para a página de reservas de mesas. A página é composta das cores padrões criados para o projeto. Verde, Amarelo e Cinza claro. 
 
-- Reserva: A página **"Reserva"** é interativa com o usuário e há possibilidade de de realizar marcações de horário e mesa a qual o cliente deseja realizar sua refeição. A página se conecta a API do Restaurante onde registra o horário e contato dos clientes em um banco de dados.
+- `/Reserva:` A página **"Reserva"** é interativa com o usuário e há possibilidade de de realizar marcações de horário e mesa a qual o cliente deseja realizar sua refeição. A página se conecta a API do Restaurante onde registra o horário e contato dos clientes em um banco de dados.
 
+- `/Sobre:` A página **"Sobre"** da aplicação exibe informações útes ao cliente da história do Restaurante além de informações sobre o cardápio.
+
+- `/Login:` A página de **"Login"** exibe a interação com o cliente para que os mesmo acesse as informações de agendamento de reserva.
 
 
 ## Pré-requisitos:
