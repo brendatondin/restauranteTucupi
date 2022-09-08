@@ -8,7 +8,7 @@ const FormEdit = ({handleChange, value}) => {
             <input type='text' value={value.data} onChange={({target}) => handleChange('data', target)}/>
             <input type='text' value={value.hora} onChange={({target}) => handleChange('hora', target)}/>
             <input type='text' value={value.lugares} onChange={({target}) => handleChange('lugares', target)}/>
-
+            <input type='text' value={value.email} onChange={({target}) => handleChange('email', target)}/>
         </form>
     )
 }

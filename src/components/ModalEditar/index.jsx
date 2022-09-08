@@ -12,7 +12,7 @@ const ModalEditar = ({ isOpenEdit, setIsOpenEdit, handleEditar, handleChange, se
         <StyledDialog open={isOpenEdit} onClose={() => setIsOpenEdit(false)}>
             <div className="divModal">
                 <Dialog.Panel className="panel">
-                    <Dialog.Title>Edita?</Dialog.Title>
+                    <Dialog.Title>Reserva:</Dialog.Title>
                     <FormEdit value={selectReserva} handleChange={handleChange}/>
                     <div className="buttons">
                         <BtnSearch onClick={atualiza}>Ok</BtnSearch>
