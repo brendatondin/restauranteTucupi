@@ -1,6 +1,6 @@
 import React, { createContext } from "react";
 
-export const TucupiContext = createContext();
+export const TucupiContext = createContext(null);
 
 const TucupiProvider = ({ children }) => {
   const context = {};

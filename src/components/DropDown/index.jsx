@@ -30,13 +30,19 @@ const Quantidade = [
   },
 ];
 
-export default function SelectTextFields() {
+export default function SelectTextFields({setValores, valores}) {
   const [currency, setCurrency] = React.useState("EUR");
 
   const handleChange = (event) => {
 
     setCurrency(event.target.value);
-  };
+
+    setValores({
+      ...valores,
+      lugares: event.target.value,
+    });
+  }
+ ;
 
   return (
     <Box

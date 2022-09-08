@@ -20,7 +20,6 @@ body,html{
 export const BtnPadrao = styled.button`
   background-color: #4f523a;
   padding: 10px 50px;
-  margin: 20px;
   cursor: pointer;
   box-shadow: (0px 4px 4px rgba(5, 5, 5, 0.5));
   border-radius: 10px;
@@ -71,7 +70,7 @@ export const ContainerPageLogin = styled.main`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 650px;
+  height: 900px;
   background-color: ${branco};
   background-position: center;
   background-size: cover;
@@ -86,7 +85,7 @@ export const ContainerForm = styled.form`
   margin-top: 110px;
   gap: 20px;
   background-color: ${gelo};
-  height: 500px;
+  height: 700px;
   width: 600px;
   border-radius: 3%;
 `;
