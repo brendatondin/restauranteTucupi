@@ -34,6 +34,7 @@ export default function SelectTextFields() {
   const [currency, setCurrency] = React.useState("EUR");
 
   const handleChange = (event) => {
+
     setCurrency(event.target.value);
   };
 

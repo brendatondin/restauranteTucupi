@@ -4,8 +4,8 @@ import {
 } from "../../styles/variaveis";
 
 export const CardStyle = styled.article `    
-    height: 360px;
-    width: 280px;
+    height: 200px;
+    width: 220px;
     border-radius: 10px;
     background: ${gelo};
     }
