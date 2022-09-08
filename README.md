@@ -36,13 +36,23 @@ O Restaurante Tucupi possui cardápio nortista e celebra o "sabor de Brasil" atr
 
 ## Pré-requisitos:
 
-- React
+- React (18.2.0)
 
-## Pacotes:
+## Bibliotecas Utilizadas:
 
-### Instalação:
+- [React Icons](https://react-icons.github.io/react-icons/): Utilizamos uma biblioteca de ícones com finalidade de deixar as informações resumidas através da simplicidade de ícones visuais para interação do cliente.
 
-No terminal da sua máquina, digite `git clone` + o link do repositório desta API:
+- [React Router Dom](https://www.npmjs.com/package/react-router-dom): Através desta biblioteca tornamos possível a interação entre páginas, possibilitando o usuário de navegar entre as páginas: home, sobre, reserva e login com extrema facilidade. 
+
+- [React Moment](https://www.npmjs.com/package/react-moment): A biblioteca "Moment" possibilita o uso da data atual, consultada em tmepo real, para o uso da aplicação.
+
+- [Styled Components](https://www.npmjs.com/package/styled-components): A mais famosa biblioteca de estilização do React foi utilziada para dar vida a elementos visual da aplicação. Consulte o resultado nos formulários e alertas de usuário no projeto.
+
+- [React Dom](https://www.npmjs.com/package/react-dom): Para possibilitar o uso, teste e desenvolvimento da aplicação de forma visual e tempo real, este projeto conta com o uso da biblioteca React Dom a qual abre um servidore interno para executar a aplicação.
+
+# Instalação:
+
+No terminal da sua máquina, digite `git clone` + o link do repositório deste projeto:
 
 ```
 git clone (https://github.com/brendatondin/restauranteTucupi)
