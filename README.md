@@ -37,6 +37,7 @@ O Restaurante Tucupi possui cardápio nortista e celebra o "sabor de Brasil" atr
 ## Pré-requisitos:
 
 - React (18.2.0)
+- Vite (3.0.7)
 
 ## Bibliotecas Utilizadas:
 
