@@ -16,6 +16,8 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
+import { useEffect } from "react";
+import moment from "moment/moment";
 
 const Reservas = () => {
   const [dados, setDados] = useState({});
@@ -23,9 +25,9 @@ const Reservas = () => {
 
   const [valores, setValores] = useState({
     nomeCliente: "",
-    data: `${valueData.$D}`,
-    hora: [],
-    lugares: [],
+    data: '',
+    hora: '',
+    lugares: '',
     email: "",
   });
 
@@ -47,14 +49,24 @@ const Reservas = () => {
 
   }
 
-  const handleChangeData = (newValue) => {
+   async function data (value) {
+    const date =  moment(value).format("DD-MM-YYYY")
+    return date
+  }
+
+  const handleChangeData = async (newValue) => {
     setValueData(newValue);
+    const mes = await data(newValue.$d)
     setValores({
       ...valores,
-      data: `${valueData.$D}/${valueData.$M}/${valueData.$y}`,
+      data:mes,
     });
-    console.log(valueData);
+
   };
+
+  useEffect(()=>{
+    console.log(valores)
+  }, [valores])
 
   return (
     <ContainerPageLogin>
@@ -75,8 +87,8 @@ const Reservas = () => {
             <Stack spacing={3}>
               <DesktopDatePicker
                 label="Data"
-                defaultValue=""
-                inputFormat="DD-MM-YYYY"
+                inputFormat="DD/MM/YYYY"
+                disablePast={true}
                 value={valueData}
                 onChange={handleChangeData}
                 renderInput={(params) => <TextField {...params} />}
@@ -85,7 +97,8 @@ const Reservas = () => {
           </LocalizationProvider>
 
           <BasicTimePicker
-          
+            setValores={setValores}
+            valores={valores}
             value={valores.hora}
             onChange={({ target }) => handleChange(target.value, "hora")}
           />
