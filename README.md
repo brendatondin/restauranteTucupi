@@ -82,3 +82,14 @@ npm run dev
 
 ```
 
+# Contribuição:
+Deseja realizar contribuições neste projeto?
+<ul>
+  <li>Realize um fork deste repositório;</li>
+  <li>Crie uma branch com seu nome ou recurso que deseja implementar;</li>
+  <li>Crie uma solicitação de implementação e contribuições;</li>
+ </ul>
+ 
+ # Disclaimer :
+ 
+- Este repositório é de **uso estudantil** e sua reprodução é livre, desde que conte **com atribuição de fonte creditada**. 
