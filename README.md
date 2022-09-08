@@ -38,7 +38,9 @@ Instalandos os pacotes:
 ```
 npm install ou npm i
 
-## Páginas
+```
+
+## Páginas da aplicação
 
 - Home: A página **"Home"** do Restaurante Tucupi traz informações sobre localização, fotos ilustrativas, logotipo, e botão de transição para a página de reservas de mesas. A página é composta das cores padrões criados para o projeto. Verde, Amarelo e Cinza claro. 
 
