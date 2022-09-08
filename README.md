@@ -37,3 +37,9 @@ Instalandos os pacotes:
 
 ```
 npm install ou npm i
+
+## Páginas
+
+- Home: A página **"Home"** do Restaurante Tucupi traz informações sobre localização, fotos ilustrativas, logotipo, e botão de transição para a página de reservas de mesas. A página é composta das cores padrões criados para o projeto. Verde, Amarelo e Cinza claro. 
+
+- Reserva: A página **"Reserva"** é interativa com o usuário e há possibilidadede de realizar marcações de horário e mesa a qual o cliente deseja realizar sua refeição. A página se conecta a API do Restaurante onde registra o horário e contato dos clientes em um banco de dados. 
