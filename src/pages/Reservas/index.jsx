@@ -34,7 +34,7 @@ const Reservas = () => {
     setDados(response);
   }
 
-  async function onClickButton(e) {
+  async function onClickButtonRotaPost(e) {
     e.preventDefault();
     console.log(valores);
     await requisicao(postReservas);
@@ -101,7 +101,7 @@ const Reservas = () => {
             onChange={({ target }) => handleChange(target, "email")}
           />
         </ThemeProvider>
-        <BtnPadrao onClick={onClickButton}>Reservar</BtnPadrao>
+        <BtnPadrao onClick={onClickButtonRotaPost}>Reservar</BtnPadrao>
       </ContainerForm>
     </ContainerPageLogin>
   );
