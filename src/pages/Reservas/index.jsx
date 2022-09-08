@@ -18,6 +18,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 import { useEffect } from "react";
 import moment from "moment/moment";
+import Alert from '@mui/material/Alert';
 
 const Reservas = () => {
   const [dados, setDados] = useState({});
@@ -32,14 +33,23 @@ const Reservas = () => {
   });
 
   async function requisicao() {
-    const response = await postReservas(valores);
-    setDados(response);
+    try {
+      const response = await postReservas(valores);
+      if(!response.erro){
+        setDados(response);
+      return response
+
+      }
+    } catch (error) {
+      <Alert severity="success">{response.msg}</Alert>
+    }
   }
 
-  async function onClickButton(e) {
+  async function onClickButtonRotaPost(e) {
     e.preventDefault();
     console.log(valores);
-    await requisicao(postReservas);
+    const req = await requisicao(postReservas);
+    return <Alert severity="success">{req.msg}</Alert>
   }
 
   function handleChange(target, key) {
@@ -99,13 +109,11 @@ const Reservas = () => {
           <BasicTimePicker
             setValores={setValores}
             valores={valores}
-            value={valores.hora}
-            onChange={({ target }) => handleChange(target.value, "hora")}
           />
 
           <SelectTextFields
-          value={valores.lugares}
-          onChange={({ target }) => handleChange(target.value, "lugares")}
+          setValores={setValores}
+          valores={valores}
           />
           <TextField
             required
@@ -113,8 +121,10 @@ const Reservas = () => {
             label="Seu e-mail"
             onChange={({ target }) => handleChange(target, "email")}
           />
+        <BtnPadrao onClick={onClickButtonRotaPost}>Reservar</BtnPadrao>
+
         </ThemeProvider>
-        <BtnPadrao onClick={onClickButton}>Reservar</BtnPadrao>
+
       </ContainerForm>
     </ContainerPageLogin>
   );
