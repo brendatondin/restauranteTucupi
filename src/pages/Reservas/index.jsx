@@ -36,7 +36,7 @@ const Reservas = () => {
     setDados(response);
   }
 
-  async function onClickButton(e) {
+  async function onClickButtonRotaPost(e) {
     e.preventDefault();
     console.log(valores);
     await requisicao(postReservas);
@@ -99,13 +99,11 @@ const Reservas = () => {
           <BasicTimePicker
             setValores={setValores}
             valores={valores}
-            value={valores.hora}
-            onChange={({ target }) => handleChange(target.value, "hora")}
           />
 
           <SelectTextFields
-          value={valores.lugares}
-          onChange={({ target }) => handleChange(target.value, "lugares")}
+          setValores={setValores}
+          valores={valores}
           />
           <TextField
             required
