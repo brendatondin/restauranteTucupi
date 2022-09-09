@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import dashi from "../../assets/dashi.png";
 import espaco from "../../assets/espaco.png";
 import obra from "../../assets/obra.png";
+import Loading from "../../components/Loading/Loading";
 import { BtnPadrao } from "../../styles/globalStyles";
 import {
   ContainerBanner,
@@ -13,8 +15,17 @@ import {
 } from "../../styles/globalStyles";
 
 const Home = () => {
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000)
+  }, [])
+
   return (
     <>
+    {loading ? <Loading/> : 
+    
       <ContainerPage>
         <ContainerBanner>
           <Title>Comida com sabor de Brasil</Title>
@@ -56,6 +67,7 @@ const Home = () => {
           </div>
         </ContainerMid>
       </ContainerPage>
+    }
     </>
   );
 };

@@ -19,6 +19,7 @@ import dayjs from "dayjs";
 import { useEffect } from "react";
 import moment from "moment/moment";
 import Alert from '@mui/material/Alert';
+import { useNavigate } from "react-router-dom";
 
 const Reservas = () => {
   const [dados, setDados] = useState({});
@@ -32,12 +33,14 @@ const Reservas = () => {
     email: "",
   });
 
+  const Navigate = useNavigate();
+
   async function requisicao() {
     try {
       const response = await postReservas(valores);
-      if(!response.erro){
+      if (!response.erro) {
         setDados(response);
-      return response
+        return response
 
       }
     } catch (error) {
@@ -49,6 +52,7 @@ const Reservas = () => {
     e.preventDefault();
     console.log(valores);
     const req = await requisicao(postReservas);
+    Navigate("/suasReservas")
     return <Alert severity="success">{req.msg}</Alert>
   }
 
@@ -59,8 +63,8 @@ const Reservas = () => {
 
   }
 
-   async function data (value) {
-    const date =  moment(value).format("DD-MM-YYYY")
+  async function data(value) {
+    const date = moment(value).format("DD-MM-YYYY")
     return date
   }
 
@@ -69,12 +73,12 @@ const Reservas = () => {
     const mes = await data(newValue.$d)
     setValores({
       ...valores,
-      data:mes,
+      data: mes,
     });
 
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(valores)
   }, [valores])
 
@@ -112,8 +116,8 @@ const Reservas = () => {
           />
 
           <SelectTextFields
-          setValores={setValores}
-          valores={valores}
+            setValores={setValores}
+            valores={valores}
           />
           <TextField
             required
@@ -121,7 +125,7 @@ const Reservas = () => {
             label="Seu e-mail"
             onChange={({ target }) => handleChange(target, "email")}
           />
-        <BtnPadrao onClick={onClickButtonRotaPost}>Reservar</BtnPadrao>
+          <BtnPadrao onClick={onClickButtonRotaPost}>Reservar</BtnPadrao>
 
         </ThemeProvider>
 
