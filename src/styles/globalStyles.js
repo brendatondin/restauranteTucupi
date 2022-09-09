@@ -147,6 +147,13 @@ export const ContainerCard = styled.section`
     font-size: 50px;
     color: white;
   }
+  .divProcurar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px
+  }
 `;
 
 export const CardBox = styled.div`

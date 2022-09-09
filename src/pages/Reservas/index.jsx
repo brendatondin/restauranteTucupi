@@ -50,7 +50,6 @@ const Reservas = () => {
 
   async function onClickButtonRotaPost(e) {
     e.preventDefault();
-    console.log(valores);
     const req = await requisicao(postReservas);
     Navigate("/suasReservas")
     return <Alert severity="success">{req.msg}</Alert>
@@ -59,7 +58,6 @@ const Reservas = () => {
   function handleChange(target, key) {
     const value = target.value;
     setValores({ ...valores, [key]: value });
-    console.log(valores);
 
   }
 
@@ -78,9 +76,6 @@ const Reservas = () => {
 
   };
 
-  useEffect(() => {
-    console.log(valores)
-  }, [valores])
 
   return (
     <ContainerPageLogin>
