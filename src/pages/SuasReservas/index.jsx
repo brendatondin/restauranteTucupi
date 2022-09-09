@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import ModalDelete from "../../components/ModalDelete";
 import ModalEditar from "../../components/ModalEditar";
 import {
-  ContainerForm,
   ContainerCard,
   CardBox,
-  SubTitle,
+  BtnPadrao,
 } from "../../styles/globalStyles";
 import Card from "../../components/Card";
-import { getTodasAsReservas, deleteReservas, putReservas } from '../../services/api.js'
+import { getTodasAsReservas, deleteReservas, putReservas, getReservasUmCliente } from '../../services/api.js'
+import { TextField, ThemeProvider } from "@mui/material";
+import { theme } from "../../styles/variaveis";
 
 
 const Reservas = () => {
@@ -23,10 +24,7 @@ const Reservas = () => {
     const req = await getTodasAsReservas()
     setReserva(await req.data.reservas)
   };
-  const handleEditar = (e) => {
-    setValue(e.target.value);
-  }
-
+  
   const handleReload = () => {
     setReload(true)
   }
@@ -35,19 +33,27 @@ const Reservas = () => {
     await deleteReservas(selectReserva)
     setIsOpen(false)
     handleReload()
-    console.log(selectReserva)
   }
 
   const handleChange = (key, target) => {
     setSelectedReserva({ ...selectReserva, [key]: target.value })
-    console.log(selectReserva);
-
   }
 
   const atualiza = async () => {
     await putReservas(selectReserva.idReserva, selectReserva)
     setIsOpenEdit(false)
     handleReload()
+  }
+
+  const handleChangeUnico = (e) => {
+    setValue(e.target.value);
+  }
+
+  const handlePesquisa = async (e) => {
+    e.preventDefault()
+    const resposta = await getReservasUmCliente(value)
+    setReserva(resposta)
+    setValue('')
   }
 
 
@@ -66,6 +72,18 @@ const Reservas = () => {
   return (
     
       <ContainerCard>
+        <div className="divProcurar">
+          <ThemeProvider theme={theme}>
+          <TextField
+              required
+              id="outlined-required"
+              label="Seu nome"
+              value={value}
+              onChange={handleChangeUnico}
+            />
+          </ThemeProvider>
+          <BtnPadrao onClick={handlePesquisa}>Procurar</BtnPadrao>
+        </div>
         <CardBox>
           {reserva &&
             reserva.map((item, index) => {

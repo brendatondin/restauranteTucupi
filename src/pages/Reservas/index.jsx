@@ -16,13 +16,13 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
-import { useEffect } from "react";
 import moment from "moment/moment";
-import Alert from '@mui/material/Alert';
+import { useNavigate } from "react-router-dom";
 
 const Reservas = () => {
   const [dados, setDados] = useState({});
   const [valueData, setValueData] = React.useState(dayjs());
+  const [reserva, setReserva] = useState(false);
 
   const [valores, setValores] = useState({
     nomeCliente: "",
@@ -32,35 +32,35 @@ const Reservas = () => {
     email: "",
   });
 
-  async function requisicao() {
-    try {
-      const response = await postReservas(valores);
-      if(!response.erro){
-        setDados(response);
-      return response
+  const Navigate = useNavigate();
 
-      }
-    } catch (error) {
-      <Alert severity="success">{response.msg}</Alert>
-    }
+  async function requisicao() {
+      const response = await postReservas(valores);
+        setDados(response);
+        return response
   }
 
   async function onClickButtonRotaPost(e) {
     e.preventDefault();
-    console.log(valores);
     const req = await requisicao(postReservas);
-    return <Alert severity="success">{req.msg}</Alert>
+    setReserva(true)
   }
+
+  function onClickSuasReservas(e) {
+    e.preventDefault();
+    Navigate("/suasReservas")
+
+  }
+
 
   function handleChange(target, key) {
     const value = target.value;
     setValores({ ...valores, [key]: value });
-    console.log(valores);
 
   }
 
-   async function data (value) {
-    const date =  moment(value).format("DD-MM-YYYY")
+  async function data(value) {
+    const date = moment(value).format("DD-MM-YYYY")
     return date
   }
 
@@ -69,17 +69,21 @@ const Reservas = () => {
     const mes = await data(newValue.$d)
     setValores({
       ...valores,
-      data:mes,
+      data: mes,
     });
 
   };
 
-  useEffect(()=>{
-    console.log(valores)
-  }, [valores])
+
 
   return (
     <ContainerPageLogin>
+      {reserva ? 
+      <ContainerForm>
+        <p>Reserva Efetuada com Sucesso</p>
+        <BtnPadrao onClick={onClickSuasReservas}>Ok</BtnPadrao>
+      </ContainerForm>
+      :
       <ContainerForm>
         <Text>Faça sua reserva</Text>
         <h5>Por favor preencha os campos pra reservar</h5>
@@ -112,8 +116,8 @@ const Reservas = () => {
           />
 
           <SelectTextFields
-          setValores={setValores}
-          valores={valores}
+            setValores={setValores}
+            valores={valores}
           />
           <TextField
             required
@@ -121,11 +125,12 @@ const Reservas = () => {
             label="Seu e-mail"
             onChange={({ target }) => handleChange(target, "email")}
           />
-        <BtnPadrao onClick={onClickButtonRotaPost}>Reservar</BtnPadrao>
+          <BtnPadrao onClick={onClickButtonRotaPost}>Reservar</BtnPadrao>
 
         </ThemeProvider>
 
       </ContainerForm>
+      }
     </ContainerPageLogin>
   );
 };

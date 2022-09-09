@@ -120,10 +120,12 @@ export const ContainerMid = styled.section`
   display: flex;
   justify-content: center;
   margin-top: 30px;
+  margin-bottom: 30px;
   }
   .btnHome{
     display: flex;
   justify-content: center;
+  margin-bottom: 20px;
   }
 
   @media (max-width: 700px) {
@@ -144,6 +146,13 @@ export const ContainerCard = styled.section`
   p {
     font-size: 50px;
     color: white;
+  }
+  .divProcurar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px
   }
 `;
 

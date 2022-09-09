@@ -10,7 +10,6 @@ export default function BasicTimePicker({setValores, valores}) {
 
   function handleOnChange(nValue){
     setValue(nValue)
-    console.log(nValue)
     setValores({
       ...valores,
       hora: `${nValue.$H}:${nValue.$m}`,
