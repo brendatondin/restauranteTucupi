@@ -1,6 +1,5 @@
 <h1 align="center">Restaurante Tucupi</h1>
 
-[![Generic badge](https://img.shields.io/badge/Status-Em_Andamento-yellow.svg)](https://shields.io/)
 
 ![Comida com sabor de Brasil](https://user-images.githubusercontent.com/83258570/188970805-b13f7adf-5665-47ff-ab61-9dec542abf54.png)
 
