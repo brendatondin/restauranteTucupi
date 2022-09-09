@@ -1,28 +1,30 @@
 import { Dialog } from "@headlessui/react";
 import React from "react";
+import FormEdit from "../FormEdit";
 import { BtnSearch } from "./styles";
 import { StyledDialog } from "./styles";
 
-const ModalEditar = ({ isOpen, setIsOpen, handleDelete }) => {
+
+const ModalEditar = ({ isOpenEdit, setIsOpenEdit, handleEditar, handleChange, selectReserva, atualiza}) => {
+
 
     return (
-        <StyledDialog open={isOpen} onClose={() => setIsOpen(false)}>
+        <StyledDialog open={isOpenEdit} onClose={() => setIsOpenEdit(false)}>
             <div className="divModal">
                 <Dialog.Panel className="panel">
-                    <Dialog.Title>Tem certeza que deseja excluir?</Dialog.Title>
-                    <form>
-                        <input type="text">Nome</input>
-                        <label htmlFor="">nome</label>
-                    </form>
+                    <Dialog.Title>Reserva:</Dialog.Title>
+                    <FormEdit value={selectReserva} handleChange={handleChange}/>
                     <div className="buttons">
-                        <BtnSearch onClick={handleDelete}>Delete</BtnSearch>
-                        <BtnSearch onClick={() => setIsOpen(false)}>Cancel</BtnSearch>
+                        <BtnSearch onClick={atualiza}>Ok</BtnSearch>
+                        <BtnSearch onClick={() => setIsOpenEdit(false)}>Cancel</BtnSearch>
                     </div>
                 </Dialog.Panel>
                 <div className="blackBox"></div>
             </div>
         </StyledDialog>
     );
+
+
 };
 
 export default ModalEditar;

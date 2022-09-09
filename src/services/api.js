@@ -11,7 +11,7 @@ export const getTodasAsReservas = async () => {
 
 export const getReservasUmCliente = async (email) => {
   const response = await api.get(`/reservas/email/${email}`);
-  return response;
+  return response.data.reserva;
 };
 
 export const deleteReservas = async (id) => {
@@ -22,13 +22,12 @@ export const deleteReservas = async (id) => {
 export const postReservas = async (body) => {
   const response = await api.post("/reservas", body);
   const json = await response.data;
-  console.log(json);
   return json;
 };
 
 
-export const putReservas = async(email, body) => {
-  const response = await api.put (`/reservas/email/${email}`, body);
+export const putReservas = async(idReserva, body) => {
+  const response = await api.put(`/reservas/idReserva/${idReserva}`, body);
   return response
 }
 

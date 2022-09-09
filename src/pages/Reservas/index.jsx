@@ -9,54 +9,81 @@ import {
   ContainerForm,
   Text,
 } from "../../styles/globalStyles";
-import {  postReservas } from "../../services/api";
+import { postReservas } from "../../services/api";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
+import moment from "moment/moment";
+import { useNavigate } from "react-router-dom";
 
 const Reservas = () => {
   const [dados, setDados] = useState({});
   const [valueData, setValueData] = React.useState(dayjs());
+  const [reserva, setReserva] = useState(false);
 
   const [valores, setValores] = useState({
     nomeCliente: "",
-    data: `${valueData.$D}`,
-    hora: "",
-    lugares: "",
-    mesa: "",
+    data: '',
+    hora: '',
+    lugares: '',
     email: "",
   });
 
+  const Navigate = useNavigate();
+
   async function requisicao() {
-    const response = await postReservas(valores);
-    setDados(response);
+      const response = await postReservas(valores);
+        setDados(response);
+        return response
   }
 
-  function onClickButton(e) {
+  async function onClickButtonRotaPost(e) {
     e.preventDefault();
-    requisicao(postReservas);
-    console.log(dados);
+    const req = await requisicao(postReservas);
+    setReserva(true)
   }
+
+  function onClickSuasReservas(e) {
+    e.preventDefault();
+    Navigate("/suasReservas")
+
+  }
+
 
   function handleChange(target, key) {
     const value = target.value;
     setValores({ ...valores, [key]: value });
-    console.log(valores);
+
   }
 
-  const handleChangeData = (newValue) => {
+  async function data(value) {
+    const date = moment(value).format("DD-MM-YYYY")
+    return date
+  }
+
+  const handleChangeData = async (newValue) => {
     setValueData(newValue);
+    const mes = await data(newValue.$d)
     setValores({
-      ...valores, data: `${valueData.$D}/${valueData.$M}/${valueData.$y}`
-    })
-    console.log(valueData);
+      ...valores,
+      data: mes,
+    });
+
   };
+
+
 
   return (
     <ContainerPageLogin>
+      {reserva ? 
+      <ContainerForm>
+        <p>Reserva Efetuada com Sucesso</p>
+        <BtnPadrao onClick={onClickSuasReservas}>Ok</BtnPadrao>
+      </ContainerForm>
+      :
       <ContainerForm>
         <Text>Faça sua reserva</Text>
         <h5>Por favor preencha os campos pra reservar</h5>
@@ -74,34 +101,36 @@ const Reservas = () => {
             <Stack spacing={3}>
               <DesktopDatePicker
                 label="Data"
-                defaultValue=""
-                inputFormat="DD-MM-YYYY"
+                inputFormat="DD/MM/YYYY"
+                disablePast={true}
                 value={valueData}
-                onChange={
-                  handleChangeData
-                }
-
+                onChange={handleChangeData}
                 renderInput={(params) => <TextField {...params} />}
               />
             </Stack>
           </LocalizationProvider>
 
-         <BasicTimePicker
-            onChange={({ target }) => handleChange(target, "hora")}
+          <BasicTimePicker
+            setValores={setValores}
+            valores={valores}
           />
+
           <SelectTextFields
-            onChange={({ target }) => handleChange(target, "lugares")}
+            setValores={setValores}
+            valores={valores}
           />
           <TextField
             required
             id="outlined-required"
             label="Seu e-mail"
-            defaultValue=""
             onChange={({ target }) => handleChange(target, "email")}
           />
+          <BtnPadrao onClick={onClickButtonRotaPost}>Reservar</BtnPadrao>
+
         </ThemeProvider>
-        <BtnPadrao onClick={onClickButton}>Reservar</BtnPadrao>
+
       </ContainerForm>
+      }
     </ContainerPageLogin>
   );
 };

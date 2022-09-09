@@ -20,7 +20,6 @@ body,html{
 export const BtnPadrao = styled.button`
   background-color: #4f523a;
   padding: 10px 50px;
-  margin: 20px;
   cursor: pointer;
   box-shadow: (0px 4px 4px rgba(5, 5, 5, 0.5));
   border-radius: 10px;
@@ -71,7 +70,7 @@ export const ContainerPageLogin = styled.main`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 650px;
+  height: 900px;
   background-color: ${branco};
   background-position: center;
   background-size: cover;
@@ -86,7 +85,7 @@ export const ContainerForm = styled.form`
   margin-top: 110px;
   gap: 20px;
   background-color: ${gelo};
-  height: 500px;
+  height: 700px;
   width: 600px;
   border-radius: 3%;
 `;
@@ -117,18 +116,17 @@ export const ContainerMid = styled.section`
   height: 100%;
   background-position: center;
   background-color: ${azule}; 
-<<<<<<< HEAD
-=======
   .imgContainer{
   display: flex;
   justify-content: center;
   margin-top: 30px;
+  margin-bottom: 30px;
   }
   .btnHome{
     display: flex;
   justify-content: center;
+  margin-bottom: 20px;
   }
->>>>>>> f8139b4e43d37a7ff35fe663d7e9ff269fe2fe25
 
   @media (max-width: 700px) {
     padding: 0 50px;
@@ -148,6 +146,13 @@ export const ContainerCard = styled.section`
   p {
     font-size: 50px;
     color: white;
+  }
+  .divProcurar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px
   }
 `;
 

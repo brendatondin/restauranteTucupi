@@ -1,11 +1,6 @@
 import styled from "styled-components";
 
-<<<<<<< HEAD
-//código morto?
-export const conteudoMid = styled`
-=======
 export const ConteudoMid = styled `
->>>>>>> f8139b4e43d37a7ff35fe663d7e9ff269fe2fe25
   display: flex;
   align-items: center;
   justify-content: center;

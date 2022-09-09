@@ -20,18 +20,12 @@ const Contato = () => {
         <Title>Sobre Nós</Title>
       </ContainerBanner>
       <ContainerMid>
-        <SubTitle>Nossa Equipe</SubTitle>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque atque,
-          id totam, officia voluptatum eos ex nam, saepe facere nisi ad
-          veritatis. Similique est voluptas iure cumque obcaecati, voluptatibus
-          consectetur?
-        </p>
+        <SubTitle>Conheça Nosso Time</SubTitle>
         <TimeContainer>
-          <Time img={brenda} nome="brenda" titulo="Front-end" />
-          <Time img={henry} nome="henry" titulo="Back-end" />
-          <Time img={talysson} nome="talysson" titulo="Back-end" />
-          <Time img={well} nome="well" titulo="Não sabe ainda" />
+          <Time img={brenda} nome="Brenda" titulo="Front-end" />
+          <Time img={henry} nome="Henry" titulo="Back-end" />
+          <Time img={talysson} nome="Talysson" titulo="Back-end" />
+          <Time img={well} nome="Well" titulo="Front-end" />
         </TimeContainer>
       </ContainerMid>
     </ContainerPage>

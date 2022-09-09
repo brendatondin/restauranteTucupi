@@ -17,14 +17,6 @@ const NavBar = ({ column, gap, none }) => {
       <li>
         <Link to="/suasReservas">Suas Reservas</Link>
       </li>
-      <div className="containerSign">
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-        {/* <li>
-          <Link to="/cadastro">Sing Up</Link>
-        </li> */}
-      </div>
     </NavBarStyled>
   );
 };
