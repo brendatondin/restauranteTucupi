@@ -17,12 +17,12 @@ import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 import moment from "moment/moment";
-import Alert from '@mui/material/Alert';
 import { useNavigate } from "react-router-dom";
 
 const Reservas = () => {
   const [dados, setDados] = useState({});
   const [valueData, setValueData] = React.useState(dayjs());
+  const [reserva, setReserva] = useState(false);
 
   const [valores, setValores] = useState({
     nomeCliente: "",
@@ -35,24 +35,23 @@ const Reservas = () => {
   const Navigate = useNavigate();
 
   async function requisicao() {
-    try {
       const response = await postReservas(valores);
-      if (!response.erro) {
         setDados(response);
         return response
-
-      }
-    } catch (error) {
-      <Alert severity="success">{response.msg}</Alert>
-    }
   }
 
   async function onClickButtonRotaPost(e) {
     e.preventDefault();
     const req = await requisicao(postReservas);
-    Navigate("/suasReservas")
-    return <Alert severity="success">{req.msg}</Alert>
+    setReserva(true)
   }
+
+  function onClickSuasReservas(e) {
+    e.preventDefault();
+    Navigate("/suasReservas")
+
+  }
+
 
   function handleChange(target, key) {
     const value = target.value;
@@ -78,6 +77,12 @@ const Reservas = () => {
 
   return (
     <ContainerPageLogin>
+      {reserva ? 
+      <ContainerForm>
+        <p>Reserva Efetuada com Sucesso</p>
+        <BtnPadrao onClick={onClickSuasReservas}>Ok</BtnPadrao>
+      </ContainerForm>
+      :
       <ContainerForm>
         <Text>Faça sua reserva</Text>
         <h5>Por favor preencha os campos pra reservar</h5>
@@ -124,6 +129,7 @@ const Reservas = () => {
         </ThemeProvider>
 
       </ContainerForm>
+      }
     </ContainerPageLogin>
   );
 };
