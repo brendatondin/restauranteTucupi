@@ -2,15 +2,13 @@ import React, { useState, useEffect } from "react";
 import ModalDelete from "../../components/ModalDelete";
 import ModalEditar from "../../components/ModalEditar";
 import {
-  ContainerForm,
   ContainerCard,
   CardBox,
-  SubTitle,
   BtnPadrao,
 } from "../../styles/globalStyles";
 import Card from "../../components/Card";
 import { getTodasAsReservas, deleteReservas, putReservas, getReservasUmCliente } from '../../services/api.js'
-import { Button, ButtonBase, TextField, ThemeProvider } from "@mui/material";
+import { TextField, ThemeProvider } from "@mui/material";
 import { theme } from "../../styles/variaveis";
 
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {
-    gelo,cinza
+    gelo
 } from "../../styles/variaveis";
 
 export const CardStyle = styled.article `    
