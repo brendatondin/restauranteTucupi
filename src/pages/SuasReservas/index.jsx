@@ -77,7 +77,7 @@ const Reservas = () => {
           <TextField
               required
               id="outlined-required"
-              label="Seu nome"
+              label="Seu email"
               value={value}
               onChange={handleChangeUnico}
             />
