@@ -34,19 +34,25 @@ O Restaurante Tucupi possui cardápio nortista e celebra o "sabor de Brasil" atr
 
 - [React Dom](https://www.npmjs.com/package/react-dom): Para possibilitar o uso, teste e desenvolvimento da aplicação de forma visual e tempo real, este projeto conta com o uso da biblioteca React Dom a qual abre um servidore interno para executar a aplicação.
 
+- [Axios](https://axios-http.com/ptbr/docs/intro): Para rodar no navegador e no node.js com a mesma base de código, utilizamos o Axios implemetado na aplicação.
+
+- [Day.js](https://day.js.org/): Day.js é uma biblioteca JavaScript minimalista que analisa, valida, manipula e exibe datas e horas para navegadores modernos com uma API amplamente compatível com Moment.js.
+
+- [ESlint](https://eslint.org/): Esta biblioteca analisa o código estaticamente para encontrar problemas.
+
+- [Moment](https://www.npmjs.com/package/moment): Biblioteca de datas JavaScript para analisar, validar, manipular e formatar datas.
+
 
 
 ## Rotas de aplicação
 
 - `/Home:` A página **"Home"** do Restaurante Tucupi traz informações sobre localização, fotos ilustrativas, logotipo, e botão de transição para a página de reservas de mesas. A página é composta das cores padrões criados para o projeto. Verde, Amarelo e Cinza claro. 
--  `/Cadastro:` Para adicionar o cliente em nosso banco de dados, o cliente pode inserir suas informações e eventuais dados por meio da página **"Cadastro"**.
 -  `/SuasReserva:` Para acesso e revisão dos agendamentos feitos pelo usuário, o cliente pode consultar através da página **Suas Reservas** as informações enviadas para a Api com seus dados de reserva.
 
 - `/Reserva:` A página **"Reserva"** é interativa com o usuário e há possibilidade de de realizar marcações de horário e mesa a qual o cliente deseja realizar sua refeição. A página se conecta a API do Restaurante onde registra o horário e contato dos clientes em um banco de dados.
 
 - `/Sobre:` A página **"Sobre"** da aplicação exibe informações útes ao cliente da história do Restaurante além de informações sobre o cardápio.
 
-- `/Login:` A página de **"Login"** exibe a interação com o cliente para que os mesmo acesse as informações de agendamento de reserva.
 
 
 ## Pré-requisitos:
