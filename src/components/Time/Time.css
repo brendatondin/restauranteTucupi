@@ -1,0 +1,39 @@
+.time__card {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    min-height: 250px;
+    border-radius: 10px;
+    align-items: center;
+    box-shadow: 0 3px 5px 2px #36382b;
+    margin: 10px;
+}
+
+.time__card:hover {
+    box-shadow: 0 3px 5px 2px #4F523A;
+    transition: .8s;
+    transform: scale(1.05);
+}
+
+.time__img {
+    width: 150px;
+    border-radius: solid;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.time__nome {
+    color: var(--secondary-brown);
+    font-family: var(--body-font);
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.time__titulo {
+    color: var(--secondary-brown);
+    font-family: var(--body-font);
+    font-weight: 400;
+    font-size: 15px;
+
+}
