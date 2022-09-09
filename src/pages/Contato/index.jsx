@@ -25,7 +25,7 @@ const Contato = () => {
           <Time img={brenda} nome="Brenda" titulo="Front-end" />
           <Time img={henry} nome="Henry" titulo="Back-end" />
           <Time img={talysson} nome="Talysson" titulo="Back-end" />
-          <Time img={well} nome="Well" titulo="Front-end" />
+          <Time img={well} nome="Wellison" titulo="Product Owner" />
         </TimeContainer>
       </ContainerMid>
     </ContainerPage>
