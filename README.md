@@ -47,9 +47,9 @@ O Restaurante Tucupi possui cardápio nortista e celebra o "sabor de Brasil" atr
 ## Rotas de aplicação
 
 - `/Home:` A página **"Home"** do Restaurante Tucupi traz informações sobre localização, fotos ilustrativas, logotipo, e botão de transição para a página de reservas de mesas. A página é composta das cores padrões criados para o projeto. Verde, Amarelo e Cinza claro. 
--  `/SuasReserva:` Para acesso e revisão dos agendamentos feitos pelo usuário, o cliente pode consultar através da página **Suas Reservas** as informações enviadas para a Api com seus dados de reserva.
+-  `/suasReserva:` Para acesso e revisão dos agendamentos feitos pelo usuário, o cliente pode consultar através da página **Suas Reservas** as informações enviadas para a Api com seus dados de reserva.
 
-- `/Reserva:` A página **"Reserva"** é interativa com o usuário e há possibilidade de de realizar marcações de horário e mesa a qual o cliente deseja realizar sua refeição. A página se conecta a API do Restaurante onde registra o horário e contato dos clientes em um banco de dados.
+- `/Reservas:` A página **"Reserva"** é interativa com o usuário e há possibilidade de de realizar marcações de horário e mesa a qual o cliente deseja realizar sua refeição. A página se conecta a API do Restaurante onde registra o horário e contato dos clientes em um banco de dados.
 
 - `/Sobre:` A página **"Sobre"** da aplicação exibe informações útes ao cliente da história do Restaurante além de informações sobre o cardápio.
 
@@ -79,7 +79,6 @@ Instalandos os pacotes:
 
 ```
 npm install ou npm i
-
 ```
 Utilize da aplicação rodando o projeto no terminal com:
 
@@ -89,6 +88,51 @@ npm start
 
 # Demonstração da aplicação
 [![agende sua reserva](https://user-images.githubusercontent.com/83258570/189283653-93c7d4d8-7792-4c6c-8da2-fa0b499b8caf.jpg)](http://restaurante-tucupi.vercel.app)
+
+## Pessoas Desenvolvedoras do Projeto:
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/henry-januario/">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/102758431?v=4" width="100px;"><br>
+        <sub>
+        <b>Henry Januário</br>
+        <sub>
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="20px">
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/brendatondin/">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/102706943?v=4"  width="100px;"><br>
+        <sub>
+        <b>Brenda Tondin</br>
+        <sub>
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="20px">
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/wellisonsales/">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/83258570?v=4" width="100px;"><br>
+        <sub>
+        <b>Wellison Sales</br>
+        <sub>
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="20px">
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/talysson-barbosa/">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/84388795?v=4" width="100px;"><br>
+        <sub>
+        <b>Talysson Barbosa</br>
+        <sub>
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="20px">
+        </sub>
+      </a>
+    </td>
+</table>
 
 
 # Contribuição:
