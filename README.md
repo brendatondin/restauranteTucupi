@@ -90,6 +90,51 @@ npm start
 # Demonstração da aplicação
 [![agende sua reserva](https://user-images.githubusercontent.com/83258570/189283653-93c7d4d8-7792-4c6c-8da2-fa0b499b8caf.jpg)](http://restaurante-tucupi.vercel.app)
 
+## Pessoas Desenvolvedoras do Projeto:
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/henry-januario/">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/102758431?v=4" width="100px;"><br>
+        <sub>
+        <b>Henry Januário</br>
+        <sub>
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="20px">
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/brendatondin/">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/102706943?v=4"  width="100px;"><br>
+        <sub>
+        <b>Brenda Tondin</br>
+        <sub>
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="20px">
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/wellisonsales/">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/83258570?v=4" width="100px;"><br>
+        <sub>
+        <b>Wellison Sales</br>
+        <sub>
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="20px">
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/talysson-barbosa/">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/84388795?v=4" width="100px;"><br>
+        <sub>
+        <b>Talysson Barbosa</br>
+        <sub>
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="20px">
+        </sub>
+      </a>
+    </td>
+</table>
+
 
 # Contribuição:
 Deseja realizar contribuições neste projeto?
